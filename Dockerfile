@@ -25,7 +25,6 @@ RUN go get -d -v
 RUN go mod download
 RUN go mod verify
 
-#RUN go build -o /application
 RUN GOOS=linux GOARCH=amd64 go build -ldflags="-w -s" -o /go/bin/lab-conversa-docker
 
 FROM alpine:3.16.0
